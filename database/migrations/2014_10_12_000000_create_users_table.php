@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //estrutura base para criação de usuarios
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nome');
             $table->string('email')->unique();
+            $table->integer('id_cargo')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
