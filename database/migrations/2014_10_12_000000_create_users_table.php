@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //estrutura base para criação de usuarios
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
@@ -22,7 +21,6 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
