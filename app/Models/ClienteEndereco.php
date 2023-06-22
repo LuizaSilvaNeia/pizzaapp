@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\{
+    Cliente,
+    Endereco
+};
 
 class ClienteEndereco extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = 'produtos_tamanhos';
-    protected $primaryKey = 'id_produto_tamanho';
+    protected $table = 'clientes_enderecos';
+    protected $primaryKey = 'id_clientes_enderecos';
 
     protected $dates = [
                 'created_at',
@@ -19,11 +23,8 @@ class ClienteEndereco extends Model
     ];
 
     protected $fillable = [
-        'id_produto',
-        'id_tamanho',
-        'nome',
-        'descricao',
-        'foto',
+        'id_cliente',
+        'id_endereco',
         'observacoes'
     ];
 
@@ -33,15 +34,15 @@ class ClienteEndereco extends Model
      * ------------------------------------------------------------
      */
 
-        public function produto(): object {
-            return $this->hasOne( Produto::class,
-                                    'id_produto',
-                                    'id_produto');
+        public function cliente(): object {
+            return $this->hasOne(Cliente::class,
+                                    'id_cliente',
+                                    'id_cliente');
         }
-        public function tamanho(): object {
-            return $this->hasOne( Tamanho::class,
-                                    'id_tamanho',
-                                    'id_tamanho');
+        public function endereco(): object {
+            return $this->hasOne( Endereco::class,
+                                    'id_endereco',
+                                    'id_endereco');
         }
 
 }
