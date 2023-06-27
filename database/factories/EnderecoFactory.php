@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use League\CommonMark\Node\Block\Paragraph;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Endereco>
@@ -20,10 +21,11 @@ class EnderecoFactory extends Factory
             'endereco'=>fake()->address(),
             'numero'=>fake()->numberBetween(1,1000),
             'complemento'=>fake()->randomLetter(),
-            'bairro'=>fake()->words(),
+            'bairro'=>fake()->word(),
             'cidade'=>fake()->city(),
             'uf'=>'SP',
-            'cep'=>fake()->postcode(),
+            'cep'=>fake()->numberBetween(1,1000),
+            //'observacoes'=>fake()->paragraph(),
         ];
     }
 }

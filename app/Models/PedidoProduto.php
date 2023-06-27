@@ -14,7 +14,7 @@ use App\Models\{
 class PedidoProduto extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = 'pedidos_produtos';
+    protected $table = 'pedido_produtos';
     protected $primaryKey = 'id_pedido_produtos';
 
     protected $dates = [

@@ -18,7 +18,7 @@ class ClienteEnderecoFactory extends Factory
     {
         return [
             'id_cliente'=>fake()->numberBetween(1,50),
-            'id_enderecp'=>fake()->numberBetween(1,50),
+            'id_endereco'=>fake()->numberBetween(1,50),
             'observacoes'=>fake()->paragraph(),
         ];
     }

@@ -14,7 +14,7 @@ class ClienteEndereco extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'clientes_enderecos';
-    protected $primaryKey = 'id_clientes_enderecos';
+    protected $primaryKey = 'id_cliente_endereco';
 
     protected $dates = [
                 'created_at',

@@ -23,7 +23,7 @@ class PedidoFactory extends Factory
             'id_cliente_endereco'=>fake()->numberBetween(1,20),
             'id_status'=>'1',
             'id_tipo_pagamento'=>'1',
-            'tootal'=>fake()->numberBetween(1,4000),
+            'total'=>fake()->numberBetween(1,4000),
             'observacoes'=>fake()->paragraph(),
         ];
     }
